@@ -37,7 +37,7 @@ RSpec.describe Category, type: :model do
     let!(:payment2) { category.payments.create!(name: 'Restaurant', amount: 30.00, author: user) }
 
     it 'returns the total expenses for the category' do
-      expect(category.total_expenses).to eq(80.00)
+      expect(category.total_payments).to eq(80.00)
     end
   end
 end

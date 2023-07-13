@@ -1,15 +1,285 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.cdnfonts.com/css/motiva-sans-test');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Motiva Sans Test', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background-color: #dfdfdff6;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+/* categories page */
+.categories-header,
+.payments-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3778c2;
+  align-items: center;
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.fa-bars,
+.fa-magnifying-glass,
+.fa-arrow-left {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.category-container,
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.5rem;
+}
+
+.category,
+.payment,
+.total-payments {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 3px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.category_name {
+  display: flex;
+  column-gap: 0.7rem;
+  align-items: center;
+}
+
+.category_icon {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 2px;
+  border: 0.5px solid #dfdfdfd2;
+}
+
+.category_link {
+  cursor: pointer;
+}
+
+.category_link,
+.payment_link,
+.total-p {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #807a7a86;
+}
+
+.category_amount,
+.payment_amount {
+  font-weight: bolder;
+}
+
+.add-new-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #5fb523;
+  padding: 0.8rem;
+  border: none;
+}
+
+.link-container {
+  width: 100%;
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.add-new-link {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.total-payments {
+  padding: 0.8rem;
+}
+
+/* FORMS */
+
+input[type="text"],
+input[type="email"],
+input[type="hidden"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-bottom: 1px solid #e0dede;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.field {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.add-new-form,
+.new_user {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  background-color: white;
+  padding: 0 0.5rem;
+}
+
+.save,
+.login,
+.sign_up {
+  margin: 0.6rem 0;
+  width: 4rem;
+  padding: 0.6rem;
+  align-self: center;
+  background-color: #3778c2;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  padding: 0.6rem;
+  color: gray;
+  border-bottom: 1px solid #e0dede;
+  margin-bottom: 1rem;
+}
+
+.login,
+.sign_up {
+  width: 100%;
+}
+
+.shared-links {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.password-field {
+  flex-direction: column;
+}
+
+/* App Home page */
+.homepage {
+  background-color: white;
+  height: 100vh;
+}
+
+.app-logo {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-name {
+  font-family: 'Arial', sans-serif;
+  font-size: 32px;
+  color: #3778c2;
+}
+
+.buddy {
+  font-family: 'Roboto', sans-serif;
+  font-style: oblique;
+  text-transform: capitalize;
+  font-size: 36px;
+  color: rgb(39, 226, 39);
+}
+
+.login-signup {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.homepage-login {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #3778c2;
+  border: none;
+  color: white;
+  border-radius: 3px;
+}
+
+.homepage-signup {
+  width: 100%;
+  border: none;
+  background-color: white;
+  margin-bottom: 1rem;
+}
+
+.login-link,
+.signup-link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.login-link {
+  color: white;
+}
+
+/* flash messages */
+#flash-messages {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.flash {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.notice {
+  background-color: #32cd32;
+  color: #fff;
+}
+
+.alert {
+  background-color: #ffa500;
+  color: #fff;
+}

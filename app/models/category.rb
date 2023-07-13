@@ -6,7 +6,7 @@ class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :icon, presence: true
 
-  def total_expenses
+  def total_payments
     payments.sum(:amount)
   end
 end

@@ -7,10 +7,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+     <%= javascript_importmap_tags %>
+     <%= javascript_include_tag 'application', crossorigin: 'anonymous' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class = 'container'>
+       <div id="flash-messages">
+         <% flash.each do |key, value| %>
+           <div class="flash <%= key %>">
+             <%= value %>
+           </div>
+         <% end %>
+       </div>
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag 'https://kit.fontawesome.com/198fcc7e17.js', crossorigin: 'anonymous' %>
   </body>
 </html>

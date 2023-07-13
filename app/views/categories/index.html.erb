@@ -1,0 +1,21 @@
+<div class="categories-header">
+  <i class="fa-solid fa-bars"></i>
+  <h2>CATEGORIES</h2>
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
+<div class="category-container">
+  <% @categories.each do |category| %>
+    <div class="category">
+      <div class="category_name">
+        <img class ='category_icon' src="<%= category.icon %>">
+        <h2><%= link_to category.name, category_payments_path(category), class: 'category_link' %></h2>
+      </div>
+      <p class="category_amount">$<%= category.total_payments %></p>
+    </div>
+  <% end %>
+</div>
+<button class="add-new-btn">
+  <div class= 'link-container'>
+    <%= link_to 'Add new category', new_category_path, class: 'add-new-link'  %>
+  </div>
+</button>

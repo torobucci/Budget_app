@@ -1,0 +1,15 @@
+<div class="payments-header">
+   <i class="fa-solid fa-bars"></i>
+   <h2>ADD NEW PAYMENT</h2>
+  <%= link_to category_payments_path(@category) do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+</div>
+
+<%= form_with(model: @payment, url: category_payments_path, method: :post, class: 'add-new-form') do |form| %>
+  <%= form.text_field :name, placeholder: 'Name', required: true %>
+  <%= form.text_field :amount, placeholder: 'Amount', required: true %>
+  <%= form.collection_select :category_id, @categories, :id, :name, { include_blank: 'Select category' }, required: true  %>
+  <%= form.submit "Save", class: 'save' %>
+<% end %>
+
