@@ -1,0 +1,26 @@
+<div class="payments-header">
+   <i class="fa-solid fa-bars"></i>
+   <h2>PAYMENTS</h2>
+   <%= link_to categories_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+   <% end %>
+</div>
+<div class="total-payments">
+   <h2 class="total-p">Total Payments</h2>
+   <p class="category_amount">$<%= @category.total_payments %></p>
+</div>
+<div class="payment-container">
+  <% @payments.each do |payment| %>
+    <div class="payment">
+      <div class="payment_name">
+        <h2 class="payment_link"><%= payment.name %></h2>
+      </div>
+      <p class="payment_amount">$<%= payment.amount %></p>
+    </div>
+  <% end %>
+</div>
+<button class="add-new-btn">
+  <div class= 'link-container'>
+    <%= link_to 'Add new payment', new_category_payment_path, class: 'add-new-link'  %>
+  </div>
+</button>
