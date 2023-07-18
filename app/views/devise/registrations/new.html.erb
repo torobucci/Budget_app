@@ -1,0 +1,20 @@
+<div class="payments-header">
+   <i class="fa-solid fa-arrow-left"></i>
+   <h2>REGISTER</h2>
+   <p>Next</p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full Name', required: true %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', required: true %>
+  <div class="field password-field">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password (6 characters minimum)', required: true %>
+  </div>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm Password', required: true %>
+  <%= f.submit "Sign up", class: 'sign_up' %>
+<% end %>
+
+<div class='shared-links'>
+  <%= render "devise/shared/links" %>
+</div>

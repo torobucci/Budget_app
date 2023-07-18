@@ -1,0 +1,17 @@
+<div class="payments-header">
+   <i class="fa-solid fa-arrow-left"></i>
+   <h2>Forgot your password?</h2>
+   <p>Log in</p>
+</div>
+
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', required: true %>
+  <%= f.submit "Send me reset password instructions", class: 'login' %>
+<% end %>
+
+
+<div class='shared-links'>
+  <%= render "devise/shared/links" %>
+</div>
